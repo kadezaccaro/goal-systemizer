@@ -1,0 +1,187 @@
+/* || GENERAL */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 80px;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 24px;
+  line-height: 24px;
+  color: gray;
+  margin-top: 16px;
+  margin-bottom: 48px;
+}
+
+form {
+  display: grid;
+  align-items: center;
+  height: 100vh;
+  max-width: 600px;
+  margin: auto;
+  padding: 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+label {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+/* || FIRST */
+
+input {
+  border-radius: 8px;
+  border: none;
+  padding: 16px;
+  font-size: 40px;
+  line-height: 40px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.glow {
+  background-color: greenyellow;
+}
+
+.next-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: white;
+  height: 72px;
+  width: 72px;
+  border-radius: 50%;
+}
+
+.next-btn i {
+  font-size: 40px;
+  color: black;
+}
+
+/* || SECOND */
+
+.second {
+  opacity: 0;
+  transform: translate(600px);
+  display: none;
+  max-width: 600px;
+}
+
+.step {
+  opacity: 0;
+  margin-bottom: 24px;
+}
+
+.step:last-of-type {
+  margin-bottom: 0;
+}
+
+ol li {
+  counter-increment: my-counter;
+}
+
+ol li:before {
+  content: counter(my-counter) ". ";
+}
+
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+  font-size: 24px;
+}
+
+.auto-grow-input {
+  display: block;
+  font-size: 24px;
+  line-height: 32px;
+  background-color: white;
+  border-radius: 8px;
+  color: black;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: gray;
+  font-size: 24px;
+  opacity: 0;
+  display: none;
+}
+
+.print-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 24px;
+  color: gray;
+  opacity: 0;
+  display: none;
+}
+
+.print-btn i,
+.back-btn i {
+  color: gray;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+/* || RESPONSIVE */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+
+  form {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .second {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 80pt;
+    line-height: 80pt;
+  }
+
+  p,
+  label,
+  .auto-grow-input,
+  ol {
+    font-size: 24pt;
+    line-height: 24pt;
+  }
+}
